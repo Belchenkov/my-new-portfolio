@@ -1,7 +1,11 @@
 <?php
 
-Route::group(['module' => 'Admin', 'middleware' => ['web'], 'namespace' => 'App\Modules\Admin\Controllers'], function() {
-
-    Route::resource('Admin', 'AdminController');
-
+Route::group(
+    [
+        'module' => 'Admin',
+        'prefix' => 'admin',
+        'middleware' => ['web', 'auth'],
+        'namespace' => 'App\Modules\Admin\Controllers'],
+    function() {
+    Route::get('/', 'AdminController@index');
 });

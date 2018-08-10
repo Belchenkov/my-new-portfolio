@@ -1,3 +1,5 @@
-<?php
+@extends('layouts.app')
 
-echo trans('Admin::example.welcome');
+@section('content')
+    <app-main></app-main>
+@endsection
