@@ -1,5 +1,6 @@
 <?php
 
+use App\Modules\Models\Category;
 use Illuminate\Database\Seeder;
 
 /**
@@ -57,5 +58,14 @@ class CategorySeeder extends Seeder
             'PhoneGap' => ['phone_gap', 11, 0],
             'Flutter' => ['flutter', 11, 0]
         ];
+
+        foreach ($categories as $k => $v) {
+            Category::create([
+                'name' => $k,
+                'alias' => $v[0],
+                'parent_id' => $v[1],
+                'active' => $v[2]
+            ]);
+        }
     }
 }
