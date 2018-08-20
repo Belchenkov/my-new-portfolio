@@ -1,5 +1,5 @@
 <template>
-    <v-app id="inspire">
+    <v-flex>
         <v-navigation-drawer
                 :clipped="$vuetify.breakpoint.lgAndUp"
                 v-model="drawer"
@@ -13,10 +13,9 @@
                             :key="item.heading"
                             row
                             align-center
-
                     >
                     </v-layout>
-                    <v-list-tile v-else :key="item.text" @click="">
+                    <v-list-tile v-else :key="item.text" @click="go(item.url)">
                         <v-list-tile-action>
                             <v-icon>{{ item.icon }}</v-icon>
                         </v-list-tile-action>
@@ -52,13 +51,6 @@
                 <v-icon>notifications</v-icon>
             </v-btn>
         </v-toolbar>
-        <v-content>
-            <v-container fluid fill-height>
-                <v-layout justify-center align-center>
-
-                </v-layout>
-            </v-container>
-        </v-content>
         <v-btn
                 fab
                 bottom
@@ -133,7 +125,7 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
-    </v-app>
+    </v-flex>
 </template>
 
 <script>
@@ -142,12 +134,17 @@
             dialog: false,
             drawer: null,
             items: [
-                { icon: 'playlist_add', text: 'Добавить категорию' },
-                { icon: 'note_add', text: 'Добавить работы' },
+                { icon: 'playlist_add', text: 'Категории', url: '/admin/categories' },
+                { icon: 'note_add', text: 'Работы', url: '/admin/works' },
             ]
         }),
         props: {
             source: String
+        },
+        methods: {
+            go(url) {
+                document.location.href = url;
+            }
         }
     }
 </script>
