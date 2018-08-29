@@ -13,8 +13,10 @@ use App\Modules\Models\Category;
  */
 class CategoryRepository extends AbstractRepository
 {
+    protected $PARENT_ID = 0;
+
     public function getAllCategories()
     {
-        return Category::all();
+        return Category::where('parent_id', $this->PARENT_ID)->with('getChildCategory')->get();
     }
 }

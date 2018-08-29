@@ -15,7 +15,6 @@
 <body>
 <v-app id="app">
     <v-content>
-        <app-navbar></app-navbar>
         @yield('content')
     </v-content>
 </v-app>

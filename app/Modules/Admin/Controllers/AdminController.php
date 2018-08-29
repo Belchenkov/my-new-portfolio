@@ -24,7 +24,7 @@ class AdminController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @author Aleksey Belchenkov <belchenkov.leha@mail.ru>
      */
-    public function cagetoriesPage()
+    public function categoriesPage()
     {
         $categories = CategoryRepository::instance()->getAllCategories();
 

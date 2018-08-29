@@ -8,6 +8,6 @@ Route::group(
         'namespace' => 'App\Modules\Admin\Controllers'],
     function() {
     Route::get('/', 'AdminController@index');
-    Route::get('/categories', 'AdminController@cagetoriesPage');
+    Route::get('/categories', 'AdminController@categoriesPage');
     Route::get('/works', 'AdminController@worksPage');
 });

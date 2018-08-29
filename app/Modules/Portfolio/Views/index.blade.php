@@ -1,3 +1,5 @@
-<?php
+@extends('layouts.app')
 
-echo trans('Portfolio::example.welcome');
+@section('content')
+    <app-portfolio></app-portfolio>
+@endsection

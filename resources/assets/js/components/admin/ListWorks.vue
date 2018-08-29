@@ -43,7 +43,6 @@
             </v-list>
         </v-card>
     </v-flex>
-
 </template>
 
 <script>
