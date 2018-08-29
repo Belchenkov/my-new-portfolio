@@ -3897,6 +3897,7 @@ readers do not read off random characters that represent icons */
 }
 
 .header {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background: url("/img/header_bg.png") no-repeat;
@@ -3945,6 +3946,68 @@ readers do not read off random characters that represent icons */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.header__fio-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 300px;
+  text-align: center;
+}
+
+.header__fio {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 70px;
+}
+
+.header__sub-fio {
+  font-style: italic;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.header__arrow-down {
+  font-size: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.header__arrow-down:hover {
+  cursor: pointer;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 .navbar-laravel {

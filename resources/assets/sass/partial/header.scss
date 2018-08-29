@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background: url("/img/header_bg.png") no-repeat;
@@ -37,6 +38,43 @@
     font-size: 20px;
     flex-wrap: wrap;
     align-items: center;
+  }
+
+  &__fio-box {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 300px;
+    text-align: center;
+  }
+
+  &__fio {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  &__sub-fio {
+    font-style: italic;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__arrow-down {
+    font-size: 50px;
+    @include flex-row;
+    justify-content: center;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    @include easeOut;
+    
+    &:hover {
+      cursor: pointer;
+      @include easeOut;
+      transform: translateY(10px);
+    }
   }
 }
 

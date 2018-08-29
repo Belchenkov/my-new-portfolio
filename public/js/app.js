@@ -69809,7 +69809,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -69820,6 +69820,13 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -69941,7 +69948,21 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("v-flex", { staticClass: "header__fio-box" }, [
+        _c("h1", { staticClass: "header__fio" }, [
+          _vm._v("Бельченков Алексей")
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "header__sub-fio" }, [
+          _vm._v("Личный сайт разработчика")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("v-flex", { staticClass: "header__arrow-down" }, [
+        _c("i", { staticClass: "fas fa-angle-down" })
+      ])
     ],
     1
   )

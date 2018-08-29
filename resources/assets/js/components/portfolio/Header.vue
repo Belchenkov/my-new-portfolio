@@ -27,6 +27,13 @@
                 </v-flex>
             </v-flex>
         </v-flex>
+        <v-flex class="header__fio-box">
+            <h1 class="header__fio">Бельченков Алексей</h1>
+            <h3 class="header__sub-fio">Личный сайт разработчика</h3>
+        </v-flex>
+        <v-flex class="header__arrow-down">
+            <i class="fas fa-angle-down"></i>
+        </v-flex>
     </v-flex>
 </template>
 
