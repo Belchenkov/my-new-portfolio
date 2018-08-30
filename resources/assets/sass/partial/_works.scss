@@ -1,0 +1,51 @@
+.works {
+  width: 100%;
+  padding: 50px;
+
+  &__header {
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__skills {
+    font-size: 24px;
+    line-height: 28px;
+    color: #7c7c7c;
+    font-weight: bold;
+    @include flex-row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  &__work {
+    text-align: center;
+    @include flex-row;
+    justify-content: center;
+
+    img {
+      width: 350px;
+      height: 350px;
+    }
+
+    .work__card {
+      width: 400px;
+      padding: 5px;
+      margin: 2px;
+    }
+
+    .work__btn {
+      @include flex-row;
+      justify-content: space-between;
+
+      button {
+        font-size: 17px;
+      }
+    }
+
+
+  }
+
+}

@@ -21,6 +21,6 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.3.0",
-        "vuetify": "^1.1.10"
+        "vuetify": "^1.2.1"
     }
 }

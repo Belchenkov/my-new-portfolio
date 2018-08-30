@@ -3878,7 +3878,7 @@ readers do not read off random characters that represent icons */
   font-weight: 900; }
 .wrapper {
   font-size: 16px;
-  max-width: 100vh;
+  max-width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4008,6 +4008,107 @@ readers do not read off random characters that represent icons */
   transition: all .5s ease-out;
   -webkit-transform: translateY(10px);
           transform: translateY(10px);
+}
+
+.works {
+  width: 100%;
+  padding: 50px;
+}
+
+.works__header {
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.works__skills {
+  font-size: 24px;
+  line-height: 28px;
+  color: #7c7c7c;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.works__work {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.works__work img {
+  width: 350px;
+  height: 350px;
+}
+
+.works__work .work__card {
+  width: 400px;
+  padding: 5px;
+  margin: 2px;
+}
+
+.works__work .work__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.works__work .work__btn button {
+  font-size: 17px;
+}
+
+.contacts {
+  width: 100vw;
+  height: 800px;
+  background: url("/img/contacts_bg.png") no-repeat;
+  background-size: cover;
+}
+
+.contacts__header {
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contacts__sub-header {
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #9e9e9e;
+  margin-bottom: 20px;
 }
 
 .navbar-laravel {
