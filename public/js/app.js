@@ -25264,7 +25264,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(16);
-module.exports = __webpack_require__(93);
+module.exports = __webpack_require__(98);
 
 
 /***/ }),
@@ -25302,6 +25302,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('app-header', __webpack_re
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('app-works', __webpack_require__(78));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('app-contacts', __webpack_require__(83));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('app-footer', __webpack_require__(88));
+
+// Auth
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('app-login', __webpack_require__(93));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app'
@@ -69809,7 +69812,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.mt-100[data-v-619f8c5e] {\n    margin-top: 100px;\n}\n", ""]);
 
 // exports
 
@@ -69820,6 +69823,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -69974,91 +69979,99 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-flex",
-    { attrs: { xs12: "", "p-4": "" } },
+    "v-layout",
+    { staticClass: "mt-100", attrs: { row: "" } },
     [
       _c(
-        "v-card",
+        "v-flex",
+        { attrs: { xs12: "", sm9: "", "offset-sm2": "" } },
         [
           _c(
-            "v-toolbar",
-            { attrs: { color: "green darken-3", dark: "" } },
+            "v-card",
             [
-              _c("v-toolbar-side-icon"),
-              _vm._v(" "),
-              _c("v-toolbar-title", [
-                _vm._v("\n               Категории\n            ")
-              ]),
-              _vm._v(" "),
-              _c("v-spacer")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-list",
-            _vm._l(_vm.items, function(item) {
-              return _c(
-                "v-list-group",
-                {
-                  key: item.id,
-                  attrs: { "no-action": "" },
-                  model: {
-                    value: item.alias,
-                    callback: function($$v) {
-                      _vm.$set(item, "alias", $$v)
-                    },
-                    expression: "item.alias"
-                  }
-                },
+              _c(
+                "v-toolbar",
+                { attrs: { color: "green darken-3", dark: "" } },
                 [
+                  _c("v-toolbar-side-icon"),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Категории")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
                   _c(
-                    "v-list-tile",
-                    { attrs: { slot: "activator" }, slot: "activator" },
+                    "v-btn",
+                    { attrs: { icon: "" } },
+                    [_c("v-icon", [_vm._v("more_vert")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list",
+                _vm._l(_vm.items, function(item) {
+                  return _c(
+                    "v-list-group",
+                    {
+                      key: item.id,
+                      attrs: { "no-action": "" },
+                      model: {
+                        value: item.alias,
+                        callback: function($$v) {
+                          _vm.$set(item, "alias", $$v)
+                        },
+                        expression: "item.alias"
+                      }
+                    },
                     [
-                      _c("img", {
-                        staticClass: "mr-2",
-                        attrs: { src: item.icon }
-                      }),
-                      _vm._v(" "),
                       _c(
-                        "v-list-tile-content",
+                        "v-list-tile",
+                        { attrs: { slot: "activator" }, slot: "activator" },
                         [
-                          _c("v-list-tile-title", [
-                            _vm._v(
-                              "\n                             " +
-                                _vm._s(item.name) +
-                                "\n                        "
-                            )
-                          ])
+                          _c("img", {
+                            staticClass: "mr-2",
+                            attrs: { src: item.icon }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-tile-content",
+                            [
+                              _c("v-list-tile-title", [
+                                _vm._v(_vm._s(item.name))
+                              ])
+                            ],
+                            1
+                          )
                         ],
                         1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _vm._l(item.get_child_category, function(subItem) {
-                    return _c(
-                      "v-list-tile",
-                      {
-                        key: subItem.title,
-                        on: { click: function($event) {} }
-                      },
-                      [
-                        _c(
-                          "v-list-tile-content",
+                      ),
+                      _vm._v(" "),
+                      _vm._l(item.get_child_category, function(subItem) {
+                        return _c(
+                          "v-list-tile",
+                          {
+                            key: subItem.id,
+                            on: { click: function($event) {} }
+                          },
                           [
                             _c(
-                              "v-list-tile-title",
+                              "v-list-tile-content",
                               [
-                                _c("v-icon", [
-                                  _vm._v("subdirectory_arrow_right")
-                                ]),
-                                _vm._v(
-                                  " " +
-                                    _vm._s(subItem.name) +
-                                    "\n                        "
+                                _c(
+                                  "v-list-tile-title",
+                                  [
+                                    _c("v-icon", [
+                                      _vm._v("subdirectory_arrow_right")
+                                    ]),
+                                    _vm._v(
+                                      "  " +
+                                        _vm._s(subItem.name) +
+                                        "\n                            "
+                                    )
+                                  ],
+                                  1
                                 )
                               ],
                               1
@@ -70066,14 +70079,14 @@ var render = function() {
                           ],
                           1
                         )
-                      ],
-                      1
-                    )
-                  })
-                ],
-                2
+                      })
+                    ],
+                    2
+                  )
+                })
               )
-            })
+            ],
+            1
           )
         ],
         1
@@ -70117,9 +70130,11 @@ var render = function() {
           _c(
             "v-card",
             [
-              _c("v-card-title", { staticClass: "grey lighten-4 py-4 title" }, [
-                _vm._v("\n                Добавить категорию\n            ")
-              ]),
+              _c(
+                "v-card-title",
+                { staticClass: "green darken-3 py-4 title white--text" },
+                [_vm._v("\n                Добавить категорию\n            ")]
+              ),
               _vm._v(" "),
               _c(
                 "v-container",
@@ -70403,7 +70418,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -70414,7 +70429,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -70499,76 +70513,85 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-flex",
-    { attrs: { xs12: "", "p-4": "" } },
+    "v-layout",
+    { attrs: { row: "" } },
     [
       _c(
-        "v-card",
+        "v-flex",
+        { attrs: { xs12: "", sm9: "", "offset-sm2": "" } },
         [
           _c(
-            "v-toolbar",
-            { attrs: { color: "green darken-3", dark: "" } },
+            "v-card",
             [
-              _c("v-toolbar-side-icon"),
+              _c(
+                "v-toolbar",
+                { attrs: { color: "green darken-3", dark: "" } },
+                [
+                  _c("v-toolbar-side-icon"),
+                  _vm._v(" "),
+                  _c("v-toolbar-title", [_vm._v("Работы")])
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("v-toolbar-title", [_vm._v("Работы")]),
-              _vm._v(" "),
-              _c("v-spacer")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-list",
-            { attrs: { "three-line": "" } },
-            [
-              _vm._l(_vm.items, function(item, index) {
-                return [
-                  item.header
-                    ? _c("v-subheader", { key: item.header }, [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(item.header) +
-                            "\n                "
-                        )
-                      ])
-                    : item.divider
-                      ? _c("v-divider", {
-                          key: index,
-                          attrs: { inset: item.inset }
-                        })
-                      : _c(
-                          "v-list-tile",
-                          {
-                            key: item.title,
-                            attrs: { avatar: "" },
-                            on: { click: function($event) {} }
-                          },
-                          [
-                            _c("v-list-tile-avatar", [
-                              _c("img", { attrs: { src: item.avatar } })
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "v-list-tile-content",
+              _c(
+                "v-list",
+                { attrs: { "three-line": "" } },
+                [
+                  _vm._l(_vm.items, function(item, index) {
+                    return [
+                      item.header
+                        ? _c("v-subheader", { key: item.header }, [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(item.header) +
+                                "\n                    "
+                            )
+                          ])
+                        : item.divider
+                          ? _c("v-divider", {
+                              key: index,
+                              attrs: { inset: item.inset }
+                            })
+                          : _c(
+                              "v-list-tile",
+                              {
+                                key: item.title,
+                                attrs: { avatar: "" },
+                                on: { click: function($event) {} }
+                              },
                               [
-                                _c("v-list-tile-title", {
-                                  domProps: { innerHTML: _vm._s(item.title) }
-                                }),
+                                _c("v-list-tile-avatar", [
+                                  _c("img", { attrs: { src: item.avatar } })
+                                ]),
                                 _vm._v(" "),
-                                _c("v-list-tile-sub-title", {
-                                  domProps: { innerHTML: _vm._s(item.subtitle) }
-                                })
+                                _c(
+                                  "v-list-tile-content",
+                                  [
+                                    _c("v-list-tile-title", {
+                                      domProps: {
+                                        innerHTML: _vm._s(item.title)
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("v-list-tile-sub-title", {
+                                      domProps: {
+                                        innerHTML: _vm._s(item.subtitle)
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
                               ],
                               1
                             )
-                          ],
-                          1
-                        )
-                ]
-              })
+                    ]
+                  })
+                ],
+                2
+              )
             ],
-            2
+            1
           )
         ],
         1
@@ -70824,17 +70847,15 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 76 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -70874,8 +70895,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 /* 77 */
@@ -71078,7 +71097,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71089,24 +71108,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -71286,7 +71287,7 @@ var render = function() {
                     [
                       _c("v-card-text", [
                         _vm._v(
-                          "\n                        I'm a thing. But, like most politicians.\n                        I'm a thing. But, like most politicians.\n                        I'm a thing. But, like most politicians.\n                        I'm a thing. But, like most politicians.\n                        I'm a thing. But, like most politicians.\n                    "
+                          "\n                        I'm a thing. But, like most politicians.\n                        I'm a thing. But, like most politicians.\n                    "
                         )
                       ])
                     ],
@@ -71856,7 +71857,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71867,6 +71868,42 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -71882,7 +71919,127 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Footer")])
+  return _c(
+    "v-flex",
+    { staticClass: "footer" },
+    [
+      _c(
+        "v-flex",
+        { staticClass: "footer__main", attrs: { xs12: "" } },
+        [
+          _c(
+            "v-flex",
+            {
+              staticClass: "footer__contacts",
+              attrs: {
+                md4: "",
+                xs12: "",
+                "text-xs-center": "",
+                "text-md-left": "",
+                "mb-2": ""
+              }
+            },
+            [
+              _c("v-flex", { staticClass: "footer__phone" }, [
+                _c("i", { staticClass: "fas fa-phone-volume" }),
+                _vm._v(" 8 (987) 362 04 48\n            ")
+              ]),
+              _vm._v(" "),
+              _c("v-flex", { staticClass: "footer__email" }, [
+                _c("i", { staticClass: "fas fa-envelope" }),
+                _vm._v(" belchenkov.leha@mail.ru\n            ")
+              ]),
+              _vm._v(" "),
+              _c("v-flex", { staticClass: "footer__telegram" }, [
+                _c("i", { staticClass: "fab fa-telegram-plane" }),
+                _vm._v(" @Belchenkov\n            ")
+              ]),
+              _vm._v(" "),
+              _c("v-flex", { staticClass: "footer__skype" }, [
+                _c("i", { staticClass: "fab fa-skype" }),
+                _vm._v(" belchenkov__aleksey\n            ")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-flex",
+            {
+              staticClass: "footer__icons",
+              attrs: { md4: "", xs12: "", "mb-2": "" }
+            },
+            [
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://moikrug.ru/belchenkov--aleksey",
+                    title: "Мой круг",
+                    target: "_blank"
+                  }
+                },
+                [_c("i", { staticClass: "my-krug-icon" })]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://github.com/Belchenkov",
+                    title: "GitHub",
+                    target: "_blank"
+                  }
+                },
+                [_c("i", { staticClass: "fab fa-github" })]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://www.linkedin.com/in/belchenkovaleksey/",
+                    title: "Linkedin",
+                    target: "_blank"
+                  }
+                },
+                [_c("i", { staticClass: "fab fa-linkedin" })]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-flex",
+            {
+              staticClass: "footer__quote",
+              attrs: {
+                md4: "",
+                xs12: "",
+                "mb-2": "",
+                "text-xs-center": "",
+                "text-md-right": ""
+              }
+            },
+            [
+              _c("p", [
+                _vm._v(
+                  "“Always code as if the guy who ends up\n                maintaining your code will be a violent psychopath\n                who knows where you live”\n            "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Martin Golding")])
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-flex", { staticClass: "footer__copyright" }, [
+        _vm._v("©Бельченков Алексей 2018 / All rights reserved")
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -71896,6 +72053,234 @@ if (false) {
 
 /***/ }),
 /* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(94)
+}
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(96)
+/* template */
+var __vue_template__ = __webpack_require__(97)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/auth/Login.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-dca5370e", Component.options)
+  } else {
+    hotAPI.reload("data-v-dca5370e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(95);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("581f0577", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dca5370e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dca5370e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 96 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            drawer: null
+        };
+    }
+});
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    { attrs: { fluid: "", "fill-height": "" } },
+    [
+      _c(
+        "v-layout",
+        { attrs: { "align-center": "", "justify-center": "" } },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs12: "", sm8: "", md4: "" } },
+            [
+              _c(
+                "v-card",
+                { staticClass: "elevation-12" },
+                [
+                  _c(
+                    "v-toolbar",
+                    {
+                      attrs: { dark: "", color: "teal", "text-lg-center": "" }
+                    },
+                    [_c("v-toolbar-title", [_vm._v("Войти")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c(
+                        "v-form",
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              "prepend-icon": "person",
+                              name: "login",
+                              label: "Login",
+                              type: "text"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              id: "password",
+                              "prepend-icon": "lock",
+                              name: "password",
+                              label: "Password",
+                              type: "password"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c("v-btn", { attrs: { color: "teal", dark: "" } }, [
+                        _vm._v("Войти")
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-dca5370e", module.exports)
+  }
+}
+
+/***/ }),
+/* 98 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

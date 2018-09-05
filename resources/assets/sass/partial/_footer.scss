@@ -1,0 +1,52 @@
+.footer {
+  width: 100vw;
+  background: #4F4F4F;
+  color: #fff;
+
+  &__main {
+    @include flex-row;
+    justify-content: center;
+    padding: 60px 160px;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  &__contacts {
+  }
+
+  &__icons {
+    padding-top: 25px;
+    @include flex-row;
+    justify-content: space-around;
+
+    i.my-krug-icon {
+      display: inline-block;
+      border-radius: 3px;
+      margin-top: 3px;
+      width: 30px;
+      height: 30px;
+      background: url("/img/my_krug_icon.png") no-repeat;
+      background-size: cover;
+    }
+
+    i {
+      font-size: 37px;
+    }
+  }
+
+  &__quote {
+    text-align: right;
+    font-style: italic;
+  }
+
+  &__copyright {
+    background: #313131;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+    font-style: italic;
+  }
+}

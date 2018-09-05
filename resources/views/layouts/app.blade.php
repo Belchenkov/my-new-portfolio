@@ -13,12 +13,9 @@
     @include('header.head')
 </head>
 <body>
-<v-app id="app">
-    <v-content>
+    <v-app id="app">
         @yield('content')
-    </v-content>
-</v-app>
-
+    </v-app>
 @include('footer.footer')
 </body>
 </html>

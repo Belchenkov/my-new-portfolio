@@ -1,45 +1,48 @@
 <template>
-    <v-flex xs12 p-4>
-        <v-card>
-            <v-toolbar color="green darken-3" dark>
-                <v-toolbar-side-icon></v-toolbar-side-icon>
-                <v-toolbar-title>
-                   Категории
-                </v-toolbar-title>
-                <v-spacer></v-spacer>
-            </v-toolbar>
+    <v-layout row class="mt-100">
+        <v-flex xs12 sm9 offset-sm2>
+            <v-card>
+                <v-toolbar color="green darken-3" dark>
+                    <v-toolbar-side-icon></v-toolbar-side-icon>
 
-            <v-list>
-                <v-list-group
-                        v-for="item in items"
-                        v-model="item.alias"
-                        :key="item.id"
-                        no-action
-                >
-                    <v-list-tile slot="activator">
-                        <img class="mr-2" :src="item.icon">
-                        <v-list-tile-content>
-                            <v-list-tile-title>
-                                 {{ item.name }}
-                            </v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                    <v-toolbar-title>Категории</v-toolbar-title>
 
-                    <v-list-tile
-                            v-for="subItem in item.get_child_category"
-                            :key="subItem.title"
-                            @click=""
+                    <v-spacer></v-spacer>
+
+                    <v-btn icon>
+                        <v-icon>more_vert</v-icon>
+                    </v-btn>
+                </v-toolbar>
+
+                <v-list>
+                    <v-list-group
+                            v-for="item in items"
+                            v-model="item.alias"
+                            :key="item.id"
+                            no-action
                     >
-                        <v-list-tile-content>
-                            <v-list-tile-title>
-                                <v-icon>subdirectory_arrow_right</v-icon> {{ subItem.name }}
-                            </v-list-tile-title>
-                        </v-list-tile-content>
+                        <v-list-tile slot="activator">
+                            <img class="mr-2" :src="item.icon">
+                            <v-list-tile-content>
+                                <v-list-tile-title>{{ item.name }}</v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
 
-                    </v-list-tile>
-                </v-list-group>
-            </v-list>
-        </v-card>
+                        <v-list-tile
+                                v-for="subItem in item.get_child_category"
+                                :key="subItem.id"
+                                @click=""
+                        >
+                            <v-list-tile-content>
+                                <v-list-tile-title>
+                                    <v-icon>subdirectory_arrow_right</v-icon>  {{ subItem.name }}
+                                </v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+                    </v-list-group>
+                </v-list>
+            </v-card>
+        </v-flex>
 
         <!-- Modal -->
         <v-btn
@@ -56,9 +59,7 @@
 
         <v-dialog v-model="dialog" width="800px">
             <v-card>
-                <v-card-title
-                        class="grey lighten-4 py-4 title"
-                >
+                <v-card-title class="green darken-3 py-4 title white--text">
                     Добавить категорию
                 </v-card-title>
                 <v-container grid-list-sm class="pa-4">
@@ -122,7 +123,8 @@
             </v-card>
         </v-dialog>
 
-    </v-flex>
+    </v-layout>
+
 
 </template>
 
@@ -145,5 +147,7 @@
 </script>
 
 <style scoped>
-
+    .mt-100 {
+        margin-top: 100px;
+    }
 </style>

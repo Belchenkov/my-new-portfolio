@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,600");
 
 @import "~@fortawesome/fontawesome-free/css/all.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
 // Variables
 @import "variables";
@@ -11,6 +12,7 @@
 @import "partial/header";
 @import "partial/works";
 @import "partial/contacts";
+@import "partial/footer";
 
 .navbar-laravel {
   background-color: #fff;

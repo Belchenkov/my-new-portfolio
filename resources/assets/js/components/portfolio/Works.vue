@@ -14,27 +14,12 @@
                     :key="work.id"
                     mb-4
             >
-                <!--<v-card class="work__card">
-                    <img :src="work.img" alt="">
-                    <v-flex class="work__btn">
-                        <v-btn dark color="black">
-                            <i class="fab fa-github mr-2"></i> GitHub
-                        </v-btn>
-                        <v-btn dark color="green">
-                            <i class="fas fa-desktop mr-2"></i> Demo
-                        </v-btn>
-                    </v-flex>
-                </v-card>-->
                 <v-card class="work__card elevation-12">
                     <v-img
                             :src="work.img"
                             height="400px"
                     >
-                        <v-container
-                                fill-height
-                                fluid
-                                pa-2
-                        >
+                        <v-container fill-height fluid pa-2>
                             <v-layout fill-height>
                                 <v-flex xs12 align-end flexbox>
                                     <span class="headline text--black" v-text="work.name"></span>
@@ -45,9 +30,6 @@
 
                     <v-slide-y-transition>
                         <v-card-text>
-                            I'm a thing. But, like most politicians.
-                            I'm a thing. But, like most politicians.
-                            I'm a thing. But, like most politicians.
                             I'm a thing. But, like most politicians.
                             I'm a thing. But, like most politicians.
                         </v-card-text>
