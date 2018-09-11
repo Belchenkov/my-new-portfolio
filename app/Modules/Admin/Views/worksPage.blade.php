@@ -2,5 +2,7 @@
 
 @section('content')
     <app-navbar></app-navbar>
-    <app-list-works></app-list-works>
+    <app-list-works
+        :categories="{{$categories}}"
+    ></app-list-works>
 @endsection

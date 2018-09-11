@@ -8,7 +8,6 @@ import 'vuetify/dist/vuetify.min.css'
 Vue.use(Vuetify);
 
 // Layouts
-Vue.component('app-main', require('./components/admin/Main'));
 Vue.component('app-navbar', require('./components/layouts/Navbar'));
 
 // Admin

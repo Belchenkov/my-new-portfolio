@@ -10,4 +10,5 @@ Route::group(
     Route::get('/', 'AdminController@index');
     Route::get('/categories', 'AdminController@categoriesPage');
     Route::get('/works', 'AdminController@worksPage');
+    Route::post('/api/save-work', 'AdminController@saveWork');
 });
