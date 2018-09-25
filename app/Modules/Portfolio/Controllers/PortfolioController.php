@@ -16,7 +16,7 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $works = WorkRepository::instance()->getWorks();
+        $works = WorkRepository::instance()->getWorksPortfolio();
 
         return view("Portfolio::index", compact('works'));
     }

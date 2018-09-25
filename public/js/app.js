@@ -71432,7 +71432,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71443,6 +71443,13 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -71526,143 +71533,164 @@ var render = function() {
         _vm._v("Мои работы")
       ]),
       _vm._v(" "),
-      _c("v-flex", { staticClass: "works__skills", attrs: { xs12: "" } }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("HTML")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("CSS")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Bootstrap")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Foundation")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "v-flex",
-        { staticClass: "works__work", attrs: { xs12: "" } },
-        _vm._l(_vm.works, function(work) {
-          return _c(
-            "v-flex",
-            { key: work.id, staticClass: "works__work", attrs: { "mb-4": "" } },
-            [
-              _c(
-                "v-card",
-                { staticClass: "work__card elevation-12" },
-                [
-                  _c(
-                    "v-img",
-                    { attrs: { src: work.img, height: "250px" } },
-                    [
-                      _c(
-                        "v-container",
-                        { attrs: { "fill-height": "", fluid: "", "pa-2": "" } },
-                        [
-                          _c(
-                            "v-layout",
-                            { attrs: { "fill-height": "" } },
-                            [
-                              _c(
-                                "v-flex",
-                                {
-                                  attrs: {
-                                    xs12: "",
-                                    "align-end": "",
-                                    flexbox: ""
-                                  }
-                                },
-                                [
-                                  _c("span", {
-                                    staticClass: "headline title",
-                                    attrs: { id: "title" },
-                                    domProps: {
-                                      textContent: _vm._s(work.title)
-                                    }
-                                  })
-                                ]
+      _vm._l(_vm.works, function(category) {
+        return _c(
+          "v-flex",
+          { key: category.id, attrs: { "mb-4": "" } },
+          [
+            _c(
+              "v-flex",
+              { staticClass: "works__skills", attrs: { xs12: "" } },
+              _vm._l(category.get_child_category, function(childCategory) {
+                return _c(
+                  "a",
+                  { key: childCategory.id, attrs: { href: "#" } },
+                  [_vm._v(_vm._s(childCategory.name))]
+                )
+              })
+            ),
+            _vm._v(" "),
+            _c(
+              "v-flex",
+              { staticClass: "works__work", attrs: { xs12: "" } },
+              _vm._l(category.works, function(work) {
+                return _c(
+                  "v-flex",
+                  {
+                    key: work.id,
+                    staticClass: "works__work",
+                    attrs: { "mb-4": "" }
+                  },
+                  [
+                    _c(
+                      "v-card",
+                      { staticClass: "work__card elevation-12" },
+                      [
+                        _c(
+                          "v-img",
+                          { attrs: { src: work.img, height: "250px" } },
+                          [
+                            _c(
+                              "v-container",
+                              {
+                                attrs: {
+                                  "fill-height": "",
+                                  fluid: "",
+                                  "pa-2": ""
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-layout",
+                                  { attrs: { "fill-height": "" } },
+                                  [
+                                    _c(
+                                      "v-flex",
+                                      {
+                                        attrs: {
+                                          xs12: "",
+                                          "align-end": "",
+                                          flexbox: ""
+                                        }
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "headline title",
+                                          attrs: { id: "title" },
+                                          domProps: {
+                                            textContent: _vm._s(work.title)
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-slide-y-transition",
+                          [
+                            _c("v-card-text", { staticClass: "work__desc" }, [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(work.desc) +
+                                  "\n                        "
                               )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-slide-y-transition",
-                    [
-                      _c("v-card-text", { staticClass: "work__desc" }, [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(work.desc) +
-                            "\n                    "
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-card-actions",
+                          { staticClass: "pt-3 work__links" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: work.github_link,
+                                  title: "GitHub",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("v-btn", { attrs: { fab: "", dark: "" } }, [
+                                  _c("i", { staticClass: "fab fa-github" })
+                                ])
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: work.preview_link,
+                                  title: "Demo",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: {
+                                      fab: "",
+                                      dark: "",
+                                      color: "cyan darken-3"
+                                    }
+                                  },
+                                  [_c("i", { staticClass: "fas fa-desktop" })]
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
                         )
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    { staticClass: "pt-3 work__links" },
-                    [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: work.github_link,
-                            title: "GitHub",
-                            target: "_blank"
-                          }
-                        },
-                        [
-                          _c("v-btn", { attrs: { fab: "", dark: "" } }, [
-                            _c("i", { staticClass: "fab fa-github" })
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: work.preview_link,
-                            title: "Demo",
-                            target: "_blank"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                fab: "",
-                                dark: "",
-                                color: "cyan darken-3"
-                              }
-                            },
-                            [_c("i", { staticClass: "fas fa-desktop" })]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        })
-      )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              })
+            )
+          ],
+          1
+        )
+      })
     ],
-    1
+    2
   )
 }
 var staticRenderFns = []

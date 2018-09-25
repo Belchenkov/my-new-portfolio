@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Modules\Models\Category;
 use App\Modules\Models\Work;
 
 /**
@@ -14,6 +15,9 @@ use App\Modules\Models\Work;
 class WorkRepository extends AbstractRepository
 {
     protected static $instance = null;
+
+    const PARENT = 0;
+    const ACTIVE = 1;
 
     /**
      * Получение работ
@@ -58,8 +62,12 @@ class WorkRepository extends AbstractRepository
      * @return Work[]|\Illuminate\Database\Eloquent\Collection
      * @author Aleksey Belchenkov <belchenkov@yksoft.ru>
      */
-    public function getWorks()
+    public function getWorksPortfolio()
     {
-        return Work::all();
+        return Category::where('parent_id', self::PARENT)
+            ->where('active', self::ACTIVE)
+            ->with('getChildCategory')
+            ->with('works')
+            ->get();
     }
 }
