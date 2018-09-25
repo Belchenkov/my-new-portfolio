@@ -6,9 +6,12 @@
   background-size: cover;
   color: #fff;
   padding-top: 30px;
+  font-family: 'Marmelad', sans-serif;
+  @include minTextShadow();
 
   &__contacts_box {
     text-shadow: 0 0 3px #000;
+    @include textShadow();
   }
 
   &__social-icons {
@@ -19,6 +22,15 @@
 
     a {
       margin-right: 2rem;
+    }
+
+    i {
+      transition: all 0.5s;
+
+      &:hover {
+        transition: all 0.5s;
+        transform: translate3d(0, -3px, 0);
+      }
     }
 
     i.my-krug-icon {

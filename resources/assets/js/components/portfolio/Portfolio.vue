@@ -2,7 +2,7 @@
     <v-flex>
         <v-flex class="wrapper">
             <app-header></app-header>
-            <app-works></app-works>
+            <app-works :works="works"></app-works>
             <app-contacts></app-contacts>
             <app-footer></app-footer>
         </v-flex>
@@ -12,7 +12,9 @@
 <script>
 
     export default {
-
+        props: {
+            works: Array
+        }
     }
 </script>
 

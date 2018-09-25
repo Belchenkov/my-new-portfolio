@@ -20,10 +20,11 @@ class WorkRepository extends AbstractRepository
      * @return array
      * @author Aleksey Belchenkov <belchenkov@yksoft.ru>
      */
-    public function getWorks()
+    public function getWorksPageData()
     {
         return [
-            'categories' => CategoryRepository::instance()->getAllCategories()
+            'categories' => CategoryRepository::instance()->getAllCategories(),
+            'works' => $this->getWorks()
         ];
     }
 
@@ -50,5 +51,15 @@ class WorkRepository extends AbstractRepository
             'is_visible' => $isVisible,
             'img' => $pathImg,
         ]);
+    }
+
+    /**
+     * Получения списка всех работ в портфолио
+     * @return Work[]|\Illuminate\Database\Eloquent\Collection
+     * @author Aleksey Belchenkov <belchenkov@yksoft.ru>
+     */
+    public function getWorks()
+    {
+        return Work::all();
     }
 }

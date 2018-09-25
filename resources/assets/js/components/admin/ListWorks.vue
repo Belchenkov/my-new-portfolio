@@ -2,9 +2,9 @@
     <v-layout row>
         <v-snackbar
                 v-model="snackbar"
-                right=true
-                timeout="6000"
-                top=true
+                :right=true
+                :timeout=6000
+                :top=true
         >
             {{ textSnackbar }}
             <v-btn
@@ -23,33 +23,31 @@
                 </v-toolbar>
 
                 <v-list three-line>
-                    <template v-for="(item, index) in items">
-                        <v-subheader
-                                v-if="item.header"
-                                :key="item.header"
-                        >
-                            {{ item.header }}
-                        </v-subheader>
-
+                    <template v-for="(work, index) in works">
                         <v-divider
-                                v-else-if="item.divider"
-                                :inset="item.inset"
                                 :key="index"
                         ></v-divider>
 
-                        <v-list-tile
-                                v-else
-                                :key="item.title"
-                                avatar
-                                @click=""
+                        <v-subheader
+                                v-if="work.title"
+                                :key="work.id"
                         >
+                            {{ work.title }}
+                        </v-subheader>
+
+                        <v-list-tile>
                             <v-list-tile-avatar>
-                                <img :src="item.avatar">
+                                <img :src="work.img">
                             </v-list-tile-avatar>
 
                             <v-list-tile-content>
-                                <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                                <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                                <v-list-tile-title>{{ work.desc }}</v-list-tile-title>
+                                <v-list-tile-sub-title>
+                                    <strong>GitHub:</strong> <a :href="work.github_link">{{work.github_link}}</a>
+                                </v-list-tile-sub-title>
+                                <v-list-tile-sub-title>
+                                    <strong>Demo:</strong>  <a :href="work.preview_link">{{work.preview_link}}</a>
+                                </v-list-tile-sub-title>
                             </v-list-tile-content>
                         </v-list-tile>
                     </template>
@@ -158,7 +156,8 @@
 <script>
     export default {
         props: {
-            categories: Array
+            categories: Array,
+            works: Array
         },
         data () {
             return {
@@ -172,14 +171,6 @@
                 category: '',
                 repositoryLink: '',
                 isVisible: true,
-                items: [
-                    { header: 'Today' },
-                    {
-                        avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-                        title: 'Brunch this weekend?',
-                        subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
-                    }
-                ]
             }
         },
         methods: {

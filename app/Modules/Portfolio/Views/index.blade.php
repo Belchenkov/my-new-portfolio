@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <app-portfolio></app-portfolio>
+    <app-portfolio
+        :works="{{$works}}"
+    ></app-portfolio>
 @endsection

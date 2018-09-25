@@ -1,5 +1,5 @@
 <template>
-    <v-layout row class="mt-100">
+    <v-layout row>
         <v-flex xs12 sm9 offset-sm2>
             <v-card>
                 <v-toolbar color="green darken-3" dark>

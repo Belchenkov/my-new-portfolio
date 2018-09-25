@@ -1,5 +1,5 @@
 <template>
-    <v-flex>
+    <div class="mb-100">
         <v-navigation-drawer
                 :clipped="$vuetify.breakpoint.lgAndUp"
                 v-model="drawer"
@@ -51,7 +51,7 @@
                 <v-icon>notifications</v-icon>
             </v-btn>
         </v-toolbar>
-    </v-flex>
+    </div>
 </template>
 
 <script>
@@ -76,5 +76,7 @@
 </script>
 
 <style scoped>
-
+    .mb-100 {
+        margin-bottom: 100px;
+    }
 </style>

@@ -2,6 +2,8 @@
   width: 100vw;
   background: #4F4F4F;
   color: #fff;
+  font-family: 'Marmelad', sans-serif;
+  @include minTextShadow();
 
   &__main {
     @include flex-row;
@@ -29,10 +31,12 @@
       height: 30px;
       background: url("/img/my_krug_icon.png") no-repeat;
       background-size: cover;
+      @include textShadow();
     }
 
     i {
       font-size: 37px;
+      @include textShadow();
     }
   }
 
