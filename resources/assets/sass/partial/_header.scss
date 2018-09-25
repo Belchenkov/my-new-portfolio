@@ -1,0 +1,93 @@
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("/img/header_bg.png") no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding-top: 30px;
+  font-family: 'Marmelad', sans-serif;
+  @include minTextShadow();
+  @include boxShadowSection();
+
+  &__contacts_box {
+    text-shadow: 0 0 3px #000;
+    @include textShadow();
+  }
+
+  &__social-icons {
+    font-size: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      margin-right: 2rem;
+    }
+
+    i {
+      transition: all 0.5s;
+
+      &:hover {
+        transition: all 0.5s;
+        transform: translate3d(0, -5px, 0);
+      }
+    }
+
+    i.my-krug-icon {
+      display: inline-block;
+      border-radius: 3px;
+      margin-top: 8px;
+      width: 30px;
+      height: 30px;
+      background: url("/img/my_krug_icon.png") no-repeat;
+      background-size: cover;
+      @include boxShadow();
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    font-size: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__fio-box {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 300px;
+    text-align: center;
+  }
+
+  &__fio {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  &__sub-fio {
+    font-style: italic;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__arrow-down {
+    font-size: 50px;
+    @include flex-row;
+    justify-content: center;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    @include easeOut;
+    
+    &:hover {
+      cursor: pointer;
+      @include easeOut;
+      transform: translateY(10px);
+    }
+  }
+}
+

@@ -1,12 +1,21 @@
-
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Lobster&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Chicle');
+@import url('https://fonts.googleapis.com/css?family=Marmelad&subset=cyrillic');
+
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
 // Variables
 @import "variables";
+@import "mixins";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "partial/main";
+@import "partial/header";
+@import "partial/works";
+@import "partial/contacts";
+@import "partial/footer";
 
 .navbar-laravel {
   background-color: #fff;

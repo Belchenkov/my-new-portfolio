@@ -1,0 +1,31 @@
+@mixin easeOut {
+  transition: all .5s ease-out;
+}
+
+@mixin textShadow {
+  text-shadow: 0 2px 3px #000;
+}
+
+@mixin minTextShadow {
+  text-shadow: 0 0 1px #000;
+}
+
+@mixin boxShadow {
+  box-shadow: 0 0 3px #000;
+}
+
+@mixin boxShadowSection {
+  box-shadow: 0 0 53px #000;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}

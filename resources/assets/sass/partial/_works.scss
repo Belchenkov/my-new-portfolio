@@ -1,0 +1,73 @@
+.works {
+  width: 100%;
+  padding: 50px;
+
+  &__header {
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 42px;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Lobster', cursive!important;
+  }
+
+  &__skills {
+    font-size: 30px;
+    line-height: 28px;
+    color: #7c7c7c;
+    font-weight: bold;
+    @include flex-row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-family: 'Chicle', cursive!important;
+    @include minTextShadow();
+  }
+
+  &__work {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    //@include flex-row;
+
+    img {
+      width: 100%;
+    }
+
+    .work__card {
+      width: 350px;
+      padding: 5px;
+      @include flex-column;
+      justify-content: center;
+
+      span#title {
+        color: #fff;
+        font-family: 'Lobster', cursive!important;
+        font-size: 1.6em!important;
+        @include textShadow();
+      }
+    }
+
+    .work__desc {
+      font-family: 'Marmelad', sans-serif;
+      font-size: 17px;
+      @include minTextShadow();
+    }
+
+    .work__btn {
+      @include flex-row;
+      justify-content: space-between;
+
+      button {
+        font-size: 17px;
+      }
+    }
+
+    .work__links {
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+
+}
