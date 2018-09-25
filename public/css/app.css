@@ -3915,6 +3915,8 @@ readers do not read off random characters that represent icons */
   padding-top: 30px;
   font-family: 'Marmelad', sans-serif;
   text-shadow: 0 0 1px #000;
+  -webkit-box-shadow: 0 0 53px #000;
+          box-shadow: 0 0 53px #000;
 }
 
 .header__contacts_box {
@@ -3946,8 +3948,8 @@ readers do not read off random characters that represent icons */
 .header__social-icons i:hover {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  -webkit-transform: translate3d(0, -3px, 0);
-          transform: translate3d(0, -3px, 0);
+  -webkit-transform: translate3d(0, -5px, 0);
+          transform: translate3d(0, -5px, 0);
 }
 
 .header__social-icons i.my-krug-icon {
@@ -3958,6 +3960,8 @@ readers do not read off random characters that represent icons */
   height: 30px;
   background: url("/img/my_krug_icon.png") no-repeat;
   background-size: cover;
+  -webkit-box-shadow: 0 0 3px #000;
+          box-shadow: 0 0 3px #000;
 }
 
 .header__contacts {
@@ -4222,12 +4226,22 @@ readers do not read off random characters that represent icons */
   height: 30px;
   background: url("/img/my_krug_icon.png") no-repeat;
   background-size: cover;
-  text-shadow: 0 2px 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+          box-shadow: 0 0 3px #000;
 }
 
 .footer__icons i {
   font-size: 37px;
   text-shadow: 0 2px 3px #000;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.footer__icons i:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translate3d(0, -5px, 0);
+          transform: translate3d(0, -5px, 0);
 }
 
 .footer__quote {

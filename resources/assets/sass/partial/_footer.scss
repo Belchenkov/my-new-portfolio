@@ -31,12 +31,18 @@
       height: 30px;
       background: url("/img/my_krug_icon.png") no-repeat;
       background-size: cover;
-      @include textShadow();
+      @include boxShadow();
     }
 
     i {
       font-size: 37px;
       @include textShadow();
+      transition: all 0.5s;
+
+      &:hover {
+        transition: all 0.5s;
+        transform: translate3d(0, -5px, 0);
+      }
     }
   }
 

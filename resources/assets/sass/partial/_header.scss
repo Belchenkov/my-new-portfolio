@@ -8,6 +8,7 @@
   padding-top: 30px;
   font-family: 'Marmelad', sans-serif;
   @include minTextShadow();
+  @include boxShadowSection();
 
   &__contacts_box {
     text-shadow: 0 0 3px #000;
@@ -29,7 +30,7 @@
 
       &:hover {
         transition: all 0.5s;
-        transform: translate3d(0, -3px, 0);
+        transform: translate3d(0, -5px, 0);
       }
     }
 
@@ -41,6 +42,7 @@
       height: 30px;
       background: url("/img/my_krug_icon.png") no-repeat;
       background-size: cover;
+      @include boxShadow();
     }
   }
 
