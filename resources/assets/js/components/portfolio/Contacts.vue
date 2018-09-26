@@ -22,16 +22,22 @@
         </v-flex>
 
         <v-flex xs8 mx-auto>
-            <v-form class="contacts__form" ref="form" @submit.prevent="submit">
+            <v-form
+                class="contacts__form"
+                ref="form"
+                v-model="valid"
+                @submit.prevent="submit"
+                lazy-validation
+            >
                 <v-container grid-list-xl fluid>
                     <v-layout wrap>
                         <v-flex xs12 sm6>
                             <v-text-field
                                     v-model="form.name"
-                                    :rules="rules.name"
                                     color="success"
                                     prepend-icon="person"
                                     label="Ваше имя"
+                                    :rules="rules.nameRules"
                                     required
                                     clearable
                             ></v-text-field>
@@ -40,8 +46,8 @@
                             <v-text-field
                                     prepend-icon="email"
                                     v-model="form.email"
-                                    :rules="rules.email"
                                     color="success"
+                                    :rules="rules.emailRules"
                                     label="Ваша почта"
                                     required
                                     clearable
@@ -49,7 +55,7 @@
                         </v-flex>
                         <v-flex xs12>
                             <v-textarea
-                                    v-model="form.bio"
+                                    v-model="form.message"
                                     color="success"
                                     clearable
                                     prepend-icon="comment"
@@ -62,7 +68,12 @@
                     </v-layout>
                 </v-container>
                 <v-card-actions>
-                    <v-btn color="success" class="mx-auto" type="submit">
+                    <v-btn
+                        color="success"
+                        class="mx-auto"
+                        type="submit"
+                        :disabled="!valid"
+                    >
                         <i class="fab fa-telegram-plane mr-1"></i> Отправить
                     </v-btn>
                 </v-card-actions>
@@ -77,19 +88,35 @@
             return {
                 form: {
                     name: '',
-                    email: ''
+                    email: '',
+                    message: ''
                 },
                 snackbar: false,
+                valid: false,
                 rules: {
-                    name: [],
-                    email: []
+                    nameRules: [
+                        v => !!v || 'Представьтесь пожалуйста!'
+                    ],
+                    emailRules: [
+                        v => !!v || 'Как я с Вами свяжусь?',
+                        v => /.+@.+/.test(v) || 'Думаю Вы где-то ошиблись!'
+                    ]
                 }
             }
         },
         methods: {
+            // Отправляем письмо
             submit () {
-                console.log('submit');
-                this.snackbar = true;
+                if (this.$refs.form.validate()) {
+
+                    axios.post('/send-message', this.form)
+                        .then(res => {
+                            console.log(res);
+                            this.snackbar = true;
+                            this.$refs.form.reset()
+                        })
+                        .catch(error => console.error(error));
+                }
             }
         }
     }

@@ -71432,7 +71432,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71443,6 +71443,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -71536,7 +71537,11 @@ var render = function() {
       _vm._l(_vm.works, function(category) {
         return _c(
           "v-flex",
-          { key: category.id, attrs: { "mb-4": "" } },
+          {
+            key: category.id,
+            class: [category.id % 2 == 0 ? "bg-grey" : "bg-white"],
+            attrs: { "mb-4": "" }
+          },
           [
             _c(
               "v-flex",
@@ -71789,7 +71794,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71873,26 +71878,57 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             form: {
                 name: '',
-                email: ''
+                email: '',
+                message: ''
             },
             snackbar: false,
+            valid: false,
             rules: {
-                name: [],
-                email: []
+                nameRules: [function (v) {
+                    return !!v || 'Представьтесь пожалуйста!';
+                }],
+                emailRules: [function (v) {
+                    return !!v || 'Как я с Вами свяжусь?';
+                }, function (v) {
+                    return (/.+@.+/.test(v) || 'Думаю Вы где-то ошиблись!'
+                    );
+                }]
             }
         };
     },
 
     methods: {
+        // Отправляем письмо
         submit: function submit() {
-            console.log('submit');
-            this.snackbar = true;
+            var _this = this;
+
+            if (this.$refs.form.validate()) {
+
+                axios.post('/send-message', this.form).then(function (res) {
+                    console.log(res);
+                    _this.snackbar = true;
+                    _this.$refs.form.reset();
+                }).catch(function (error) {
+                    return console.error(error);
+                });
+            }
         }
     }
 });
@@ -71955,11 +71991,19 @@ var render = function() {
             {
               ref: "form",
               staticClass: "contacts__form",
+              attrs: { "lazy-validation": "" },
               on: {
                 submit: function($event) {
                   $event.preventDefault()
                   return _vm.submit($event)
                 }
+              },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
               }
             },
             [
@@ -71977,10 +72021,10 @@ var render = function() {
                         [
                           _c("v-text-field", {
                             attrs: {
-                              rules: _vm.rules.name,
                               color: "success",
                               "prepend-icon": "person",
                               label: "Ваше имя",
+                              rules: _vm.rules.nameRules,
                               required: "",
                               clearable: ""
                             },
@@ -72003,8 +72047,8 @@ var render = function() {
                           _c("v-text-field", {
                             attrs: {
                               "prepend-icon": "email",
-                              rules: _vm.rules.email,
                               color: "success",
+                              rules: _vm.rules.emailRules,
                               label: "Ваша почта",
                               required: "",
                               clearable: ""
@@ -72034,11 +72078,11 @@ var render = function() {
                                 "prepend-icon": "comment"
                               },
                               model: {
-                                value: _vm.form.bio,
+                                value: _vm.form.message,
                                 callback: function($$v) {
-                                  _vm.$set(_vm.form, "bio", $$v)
+                                  _vm.$set(_vm.form, "message", $$v)
                                 },
-                                expression: "form.bio"
+                                expression: "form.message"
                               }
                             },
                             [
@@ -72070,7 +72114,11 @@ var render = function() {
                     "v-btn",
                     {
                       staticClass: "mx-auto",
-                      attrs: { color: "success", type: "submit" }
+                      attrs: {
+                        color: "success",
+                        type: "submit",
+                        disabled: !_vm.valid
+                      }
                     },
                     [
                       _c("i", { staticClass: "fab fa-telegram-plane mr-1" }),

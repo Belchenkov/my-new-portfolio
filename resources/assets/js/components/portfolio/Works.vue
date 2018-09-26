@@ -5,6 +5,7 @@
             v-for="category in works"
             :key="category.id"
             mb-4
+            :class="[category.id % 2 == 0 ? 'bg-grey' : 'bg-white' ]"
         >
             <v-flex class="works__skills" xs12>
                 <a
