@@ -28,7 +28,7 @@ class WorkRepository extends AbstractRepository
     {
         return [
             'categories' => CategoryRepository::instance()->getAllCategories(),
-            'works' => $this->getWorks()
+            'works' => $this->getWorksPortfolio()
         ];
     }
 
@@ -69,5 +69,18 @@ class WorkRepository extends AbstractRepository
             ->with('getChildCategory')
             ->with('works')
             ->get();
+    }
+
+    /**
+     * Получения списка всех работ в админку
+     * @return Work[]|\Illuminate\Database\Eloquent\Collection
+     * @author Aleksey Belchenkov <belchenkov@yksoft.ru>
+     */
+    public function getWorksAdmin()
+    {
+        return [
+            'works' => Work::all(),
+            'categories' => Category::all()
+        ];
     }
 }

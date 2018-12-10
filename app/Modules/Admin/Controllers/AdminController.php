@@ -40,7 +40,7 @@ class AdminController extends Controller
      */
     public function worksPage()
     {
-        extract(WorkRepository::instance()->getWorksPageData());
+        extract(WorkRepository::instance()->getWorksAdmin());
 
         return view("Admin::worksPage", compact(
             'categories',

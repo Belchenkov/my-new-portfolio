@@ -70294,7 +70294,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -70305,6 +70305,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -70624,9 +70625,16 @@ var render = function() {
                               _c("v-list-tile-sub-title", [
                                 _c("strong", [_vm._v("GitHub:")]),
                                 _vm._v(" "),
-                                _c("a", { attrs: { href: work.github_link } }, [
-                                  _vm._v(_vm._s(work.github_link))
-                                ])
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: work.github_link,
+                                      target: "__blank"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(work.github_link))]
+                                )
                               ]),
                               _vm._v(" "),
                               _c("v-list-tile-sub-title", [
@@ -70634,7 +70642,12 @@ var render = function() {
                                 _vm._v(" "),
                                 _c(
                                   "a",
-                                  { attrs: { href: work.preview_link } },
+                                  {
+                                    attrs: {
+                                      href: work.preview_link,
+                                      target: "__blank"
+                                    }
+                                  },
                                   [_vm._v(_vm._s(work.preview_link))]
                                 )
                               ])
@@ -70827,7 +70840,7 @@ var render = function() {
                               items: _vm.categories,
                               "item-text": "name",
                               "item-value": "id",
-                              color: "success",
+                              color: "green",
                               clearable: ""
                             },
                             model: {

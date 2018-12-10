@@ -39,14 +39,15 @@
                             <v-list-tile-avatar>
                                 <img :src="work.img">
                             </v-list-tile-avatar>
-
                             <v-list-tile-content>
                                 <v-list-tile-title>{{ work.desc }}</v-list-tile-title>
                                 <v-list-tile-sub-title>
-                                    <strong>GitHub:</strong> <a :href="work.github_link">{{work.github_link}}</a>
+                                    <strong>GitHub:</strong>
+                                    <a :href="work.github_link" target="__blank">{{work.github_link}}</a>
                                 </v-list-tile-sub-title>
                                 <v-list-tile-sub-title>
-                                    <strong>Demo:</strong>  <a :href="work.preview_link">{{work.preview_link}}</a>
+                                    <strong>Demo:</strong>
+                                    <a :href="work.preview_link" target="__blank">{{work.preview_link}}</a>
                                 </v-list-tile-sub-title>
                             </v-list-tile-content>
                         </v-list-tile>
@@ -121,7 +122,7 @@
                                     v-model="category"
                                     item-text="name"
                                     item-value="id"
-                                    color="success"
+                                    color="green"
                                     clearable
                             ></v-autocomplete>
                         </v-flex>
